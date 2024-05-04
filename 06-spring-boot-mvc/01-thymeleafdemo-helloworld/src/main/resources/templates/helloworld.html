@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <title>Hello World - Process Form</title>
+</head>
+<body>
+    <p th:text="'Hello World on Spring'"/>
+    <span th:text="'Parameter sent in HttpServletRequest ' + ${param.studentName}"/>
+    </br>
+    <span th:text="'Welcome ' + ${studentNameUpperCase}"/>
+</body>
+</html>
