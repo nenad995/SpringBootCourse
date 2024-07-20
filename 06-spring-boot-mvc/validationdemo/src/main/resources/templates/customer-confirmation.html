@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <title>Customer Confirmation</title>
+</head>
+<body>
+    <p th:text="'Customer is confirmed: ' + ${customer.firstName} + ' ' + ${customer.lastName}"/>
+    <p th:text="'Free passes: ' + ${customer.freePasses}"/>
+    <p th:text="'ZIP code: ' + ${customer.zipCode}"/>
+</body>
+</html>
