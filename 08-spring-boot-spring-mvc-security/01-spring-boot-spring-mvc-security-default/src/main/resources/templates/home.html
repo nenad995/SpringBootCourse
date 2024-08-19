@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <title>Nex Home Page</title>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Home Page</h2>
+
+    <hr>
+
+    <p>Welcome to the home page</p>
+
+    <hr>
+
+    <!-- Displaying User information -->
+    <p>Hello <span sec:authentication="principal.username"></span></p>
+    <p>Role(s): <span sec:authentication="principal.authorities"></span></p>
+
+
+    <div sec:authorize="hasRole('MANAGER')">
+        <!-- Show this link only for users with role MANAGER -->
+        <a th:href="@{/leaders}">Leadership Meeting</a>
+    </div>
+
+    <div sec:authorize="hasRole('ADMIN')">
+        <!-- Show this link only for users with role ADMIN -->
+        <a th:href="@{/systems}">IT System Meeting</a>
+    </div>
+
+
+    <hr>
+
+    <form action="#" th:action="@{/logout}" method="POST">
+        <input type="submit" value="Logout"/>
+    </form>
+</div>
+
+</body>
+</html>
